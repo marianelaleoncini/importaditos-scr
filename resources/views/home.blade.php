@@ -2,26 +2,23 @@
 
 @section('content')
 
-    <div class="container marketing">
-        <div class="row featurette">
-            <div class="col-md-5">
+        <div class="row featurette desc-importaditos">
+          {{--   <div class="col-md-5">
                 <img class="featurette-image img-responsive center-block logo-marcas" src="images/marcas.jpg" 
                     alt="Logos de las marcas">
-            </div>
-            <div class="col-md-7">
+            </div> --}}
+            <div class="about-us">
                 <h2 class="featurette-heading">Importaditos SCR</h2>
                 <p class="lead">Te traemos las mejores marcas de niños directamente desde EEUU. Vos elegís todas
                 las prendas que más te gusten y nosotros nos encargamos de hacértelas llegar a tu domicilio. Envíos gratuitos en toda la zona: Las Rosas, Las Parejas, Los Cardos, Rosario.</p>
             </div>
         </div>
-
-        <hr class="featurette-divider">
-
+    <div class="container marketing">
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">Seguinos en <a href="https://www.facebook.com/Importaditos-SCR-
                     Las-Rosas-400412593476337/?fref=ts">Facebook</a></h2>
-                <p class="lead">Enterate cuándo abren nuestros pedidos y participá de nuestros sorteos.</p>
+                <p class="lead">Enterate cuándo abren nuestros pedidos, dejanos tus consultas y participá de nuestros sorteos.</p>
             </div>
             <div class="col-md-5">
                 <img class="featurette-image img-responsive center-block" src="images/fb.png" 

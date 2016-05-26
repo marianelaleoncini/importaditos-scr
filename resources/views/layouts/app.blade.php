@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
             integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="css/app.css">
+        <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
@@ -32,10 +34,10 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Pedidos</a></li>
-                        <li><a href="#">Stock</a></li>
-                        <li><a href="#">Consultas</a></li>
+                        <li class="active"><a href="#">HOME</a></li>
+                        <li><a href="#">PEDIDOS</a></li>
+                        <li><a href="#">STOCK</a></li>
+                        <li><a href="#">CONSULTAS</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Iniciar Sesión</a></li>
@@ -44,7 +46,7 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="general-container">
             @yield('content')
 
             <footer>

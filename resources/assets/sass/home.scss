@@ -3,16 +3,28 @@
     width: 30%;
     height: 30%;
 }
+
 .logo-marcas {
     width: 70%;
     border-radius: 10px;
     margin-top: 25px
 }
+
 .img-circle {
     width: 40%;
     height: 40%;
 }
 
-.featurette {
-    background-image: url("images/chicos1.jpg");
+.desc-importaditos {
+    background-image: url("../images/carters2.jpg");
+    background-size: cover;
+    height: 400px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px #000000;
+    
+    .about-us {
+        padding: 100px;
+        text-shadow: 2px 2px #FFFFFF;
+    }
 }
+
