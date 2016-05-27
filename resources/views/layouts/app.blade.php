@@ -30,17 +30,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Importaditos SCR</a>
+                    <a class="navbar-brand" href="{{ url('/') }}">Importaditos SCR</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">HOME</a></li>
-                        <li><a href="#">PEDIDOS</a></li>
-                        <li><a href="#">STOCK</a></li>
+                        <li class="active"><a href="{{ url('/') }}">HOME</a></li>
+                        <li><a href="{{ url('pedidos/') }}">PEDIDOS</a></li>
+                        <li><a href="{{ url('stock/') }}">STOCK</a></li>
                         <li><a href="#">CONSULTAS</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Iniciar Sesión</a></li>
+                        <li><a href="{{ url('login/') }}">Iniciar Sesión</a></li>
                     </ul>
                 </div>
             </div>

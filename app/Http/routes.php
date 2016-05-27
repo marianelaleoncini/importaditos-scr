@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/login', function () {
+    return view('login.login');
+});
+
+
+//Pedidos
+Route::get('/pedidos', 'PedidosController@index');
+
+//Stock
+Route::get('/stock', 'StockController@index');
+
