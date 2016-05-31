@@ -29,7 +29,7 @@
                     alt="Imagen registro de usuario">
             </div>
             <div class="col-md-7">
-                <h2 class="featurette-heading"><a href="">Registrate</a></h2>
+                <h2 class="featurette-heading"><a href="{{ url('/register') }}">Registrate</a></h2>
                 <p class="lead">Ahora podes hacer tus pedidos más fácil y rápido. Iniciá sesión con tu cuenta, 
                 elegí todas las prendas que quieras y listo!</p>
             </div>
@@ -42,20 +42,23 @@
                 <img class="img-circle" src="images/pedidos.jpg" alt="Prendas de ropa">
                 <h2>Pedidos</h2>
                 <p>Periódicamente subimos nuestro catálogo para que puedas elegir y reservar tus prendas favoritas.</p>
-                <p><a class="btn btn-default" href="#" role="button">Ver detalles &raquo;</a></p>
+                <p><a class="btn btn-default" href="{{ url('/pedidos') }}" role="button">
+                    Ver detalles &raquo;</a></p>
             </div>
             <div class="col-lg-4">
                 <img class="img-circle" src="images/stock.jpg" alt="Prendas de ropa">
                 <h2>Stock</h2>
                 <p>¡No te quedes con las ganas! Mirá toda la ropa que tenemos para entrega inmediata y pedinos todo
                   lo que quieras.</p>
-                <p><a class="btn btn-default" href="#" role="button">Ver detalles &raquo;</a></p>
+                <p><a class="btn btn-default" href="{{ url('/stock') }}" role="button">
+                    Ver detalles &raquo;</a></p>
             </div>
             <div class="col-lg-4">
                 <img class="img-circle" src="images/consultas.jpg"  alt="Niño pensativo">
                 <h2>Consultas</h2>
                 <p>Cualquier duda que tengas no dudes en contactarte con nosotros.</p>
-                <p><a class="btn btn-default" href="#" role="button">Ver detalles &raquo;</a></p>
+                <p><a class="btn btn-default" href="#" role="button">
+                    Ver detalles &raquo;</a></p>
             </div>
         </div>
 
