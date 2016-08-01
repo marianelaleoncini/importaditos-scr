@@ -11,8 +11,7 @@
     <div class="container marketing">
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">Seguinos en <a href="https://www.facebook.com/Importaditos-SCR-
-                    Las-Rosas-400412593476337/?fref=ts">Facebook</a></h2>
+                <h2 class="featurette-heading">Seguinos en <a href="https://www.facebook.com/Importaditos-SCR-Las-Rosas-400412593476337/?fref=ts">Facebook</a></h2>
                 <p class="lead">Enterate cuándo abren nuestros pedidos, dejanos tus consultas y participá de nuestros sorteos.</p>
             </div>
             <div class="col-md-5">
@@ -29,7 +28,7 @@
                     alt="Imagen registro de usuario">
             </div>
             <div class="col-md-7">
-                <h2 class="featurette-heading"><a href="{{ url('/register') }}">Registrate</a></h2>
+                <h2 class="featurette-heading"><a href="{{ route('auth.register') }}">Registrate</a></h2>
                 <p class="lead">Ahora podes hacer tus pedidos más fácil y rápido. Iniciá sesión con tu cuenta, 
                 elegí todas las prendas que quieras y listo!</p>
             </div>
@@ -38,22 +37,22 @@
         <hr class="featurette-divider">
 
         <div class="row">
-            <div class="col-lg-4">
+{{--             <div class="col-lg-4">
                 <img class="img-circle" src="images/pedidos.jpg" alt="Prendas de ropa">
                 <h2>Pedidos</h2>
                 <p>Periódicamente subimos nuestro catálogo para que puedas elegir y reservar tus prendas favoritas.</p>
-                <p><a class="btn btn-default" href="{{ url('/pedidos') }}" role="button">
+                <p><a class="btn btn-default" href="{{ route('/pedidos') }}" role="button">
                     Ver detalles &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
+            </div> --}}
+            <div class="col-lg-6">
                 <img class="img-circle" src="images/stock.jpg" alt="Prendas de ropa">
                 <h2>Stock</h2>
                 <p>¡No te quedes con las ganas! Mirá toda la ropa que tenemos para entrega inmediata y pedinos todo
                   lo que quieras.</p>
-                <p><a class="btn btn-default" href="{{ url('/stock') }}" role="button">
+                <p><a class="btn btn-default" href="{{ route('stock') }}" role="button">
                     Ver detalles &raquo;</a></p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <img class="img-circle" src="images/consultas.jpg"  alt="Niño pensativo">
                 <h2>Consultas</h2>
                 <p>Cualquier duda que tengas no dudes en contactarte con nosotros.</p>

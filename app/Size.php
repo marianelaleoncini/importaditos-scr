@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Color extends Model
+class Size extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class Color extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name', 'brand', 'height', 'weight'
     ];
-
+    
 }

@@ -11,15 +11,65 @@
 |
 */
 
-
-Route::get('/', 'HomeController@index');
-
-//Pedidos
-Route::get('/pedidos', 'PedidosController@index');
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'HomeController@index'
+]);
 
 //Stock
-Route::get('/stock', 'StockController@index');
+Route::get('stock', [
+    'as' => 'stock',
+    'uses' => 'StockController@index'
+]);
 
+//Size
+Route::get('sizes', [
+    'as' => 'sizes',
+    'uses' => 'SizeController@index'
+]);
+Route::get('sizes/create', [
+    'as' => 'sizes.create',
+    'uses' => 'SizeController@create'
+]);
+Route::post('sizes', [
+    'as' => 'sizes',
+    'uses' => 'SizeController@store'
+]);
 
-Route::auth();
+//Authentication
+Route::get('login', [
+    'as' => 'auth.login',
+    'uses' => 'Auth\AuthController@showLoginForm'
+]);
+Route::post('login', [
+    'as' => 'auth.login',
+    'uses' => 'Auth\AuthController@login'
+]);
+Route::get('logout', [
+    'as' => 'auth.logout',
+    'uses' => 'Auth\AuthController@logout'
+]);
 
+// Registration
+Route::get('register', [
+    'as' => 'auth.register',
+    'uses' => 'Auth\AuthController@showRegistrationForm'
+]);
+Route::post('register', [
+    'as' => 'auth.register',
+    'uses' => 'Auth\AuthController@register'
+]);
+
+// Password Reset
+Route::get('password/reset/{token?}', [
+    'as' => 'auth.password.reset',
+    'uses' => 'Auth\PasswordController@showResetForm'
+]);
+Route::post('password/email', [
+    'as' => 'auth.password.email',
+    'uses' => 'Auth\PasswordController@sendResetLinkEmail'
+]);
+Route::post('password/reset', [
+    'as' => 'auth.password.reset',
+    'uses' => 'Auth\PasswordController@reset'
+]);

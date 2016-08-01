@@ -16,7 +16,15 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->float('price');
+            $table->string('size');
+            $table->string('brand');
+            $table->integer('stock');
             $table->timestamps();
+
+            $table
+                ->foreign(['size', 'brand'])
+                ->references(['name', 'brand'])
+                ->on('sizes');
         });
     }
 

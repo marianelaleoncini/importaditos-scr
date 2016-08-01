@@ -8,7 +8,7 @@
                 <div class="panel-heading">Reestablecer contraseña</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}" novalidate>
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('auth.password.reset') }}" novalidate>
                         {!! csrf_field() !!}
 
                         <input type="hidden" name="token" value="{{ $token }}">

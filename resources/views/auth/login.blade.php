@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Iniciar sesión</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}" novalidate>
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('auth.login') }}" novalidate>
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -54,7 +54,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i>Iniciar sesión
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                                <a class="btn btn-link" href="{{ route('auth.password.reset') }}">
                                     ¿Olvidaste tu contraseña?</a>
                             </div>
                         </div>
