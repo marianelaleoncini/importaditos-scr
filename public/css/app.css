@@ -249,9 +249,17 @@ select.selectpicker {
   float: none; }
 
 /* Structure */
+html {
+  height: 100%;
+  box-sizing: border-box; }
+
 body {
   font-family: 'Nunito', sans-serif;
-  background: #f8f8f8; }
+  background: #f8f8f8;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%; }
 
 .nav {
   padding-bottom: 0; }
@@ -270,9 +278,14 @@ body {
     color: #d0d0d0; }
 
 footer {
-  text-align: center; }
-  footer .pull-right {
-    padding-right: 20px; }
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #808080;
+  text-align: center;
+  color: #d0d0d0; }
 
 /* Form */
 .form-horizontal .form-group {

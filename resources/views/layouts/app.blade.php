@@ -78,7 +78,7 @@
         </div>
         <footer>
             {{--  <p class="pull-right"><a href="#">Volver arriba</a></p>  --}}
-            <p>&middot; &copy; Diseñado y Desarrollado por Marianela Leoncini &middot;</p>
+            <span>&middot; &copy; Diseñado y Desarrollado por Marianela Leoncini &middot;</span>
         </footer>
 
         <!-- ============== JavaScript ============== -->

@@ -3,9 +3,18 @@
 @import '_mixins';
 
 /* Structure */
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Nunito', sans-serif;
     background: #f8f8f8;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
 }
 
 .nav {
@@ -30,11 +39,14 @@ body {
 }
 
 footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #808080;
     text-align: center;
-    
-    .pull-right {
-        padding-right: 20px;
-    }
+    color: #d0d0d0;
 }
 
 /* Form */
