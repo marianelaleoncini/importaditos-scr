@@ -13,13 +13,16 @@ class CreateSizesTable extends Migration
     public function up()
     {
         Schema::create('sizes', function (Blueprint $table) {
+            $table->increments('id');            
             $table->string('name');
-            $table->string('brand');
             $table->string('height');
             $table->string('weight');
+            $table->integer('brand_id')->unsigned();
             $table->timestamps();
-            
-            $table->primary(['name', 'brand']);
+        });
+
+        Schema::table('sizes', function($table) {
+            $table->foreign('brand_id')->references('id')->on('brands');
         });
     }
 

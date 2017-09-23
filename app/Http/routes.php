@@ -36,6 +36,20 @@ Route::post('sizes', [
     'uses' => 'SizeController@store'
 ]);
 
+//Brand
+Route::get('brands', [
+    'as' => 'brands',
+    'uses' => 'BrandController@index'
+]);
+Route::get('brands/create', [
+    'as' => 'brands.create',
+    'uses' => 'BrandController@create'
+]);
+Route::post('brands', [
+    'as' => 'brands',
+    'uses' => 'BrandController@store'
+]);
+
 //Authentication
 Route::get('login', [
     'as' => 'auth.login',

@@ -11,8 +11,10 @@ class Size extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'brand', 'height', 'weight'
-    ];
+    protected $fillable = ['name', 'height', 'weight', 'brand_id'];
     
+    public function brand()
+    {
+        return $this->belongsTo('App\Brand');
+    }
 }

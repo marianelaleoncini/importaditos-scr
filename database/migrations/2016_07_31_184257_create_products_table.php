@@ -15,16 +15,14 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->float('price');
-            $table->string('size');
-            $table->string('brand');
+            $table->decimal('price', 4, 2); 
             $table->integer('stock');
+            $table->integer('brand_id')->unsigned();
             $table->timestamps();
+        });
 
-            $table
-                ->foreign(['size', 'brand'])
-                ->references(['name', 'brand'])
-                ->on('sizes');
+        Schema::table('products', function($table) {
+            $table->foreign('brand_id')->references('id')->on('brands');
         });
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Size;
+use App\Brand;
 use Illuminate\Http\Request;
 
 class SizeController extends Controller
@@ -14,15 +15,16 @@ class SizeController extends Controller
      */
     public function index() {
         $sizes = Size::all();
-        return view('sizes.index', compact('sizes'));
+        return view('sizes.index-sizes', compact('sizes'));
     }
-
+    
     /**
-     * Show the create size form.
-     * @return Illuminate\View\View
-     */
+    * Show the create size form.
+    * @return Illuminate\View\View
+    */
     public function create() {
-        return view('sizes.create'); 
+        $brands = Brand::all();
+        return view('sizes.create-sizes', compact('brands')); 
     }
 
     /**
@@ -32,12 +34,12 @@ class SizeController extends Controller
      */
     public function store(Request $request) {
         Size::create([
-            'nombre' => $request['name'], 
-            'brand' => $request['brand'],
-            'height' => $request['height'],
-            'weight'=> $request['weight']
+            'name' => $request->get('name'), 
+            'brand_id' => $request->get('brand'),
+            'height' => $request->get('height'),
+            'weight'=> $request->get('weight')
         ]);
-        return redirect();
+        return redirect()->route('sizes');        
     }
         
 }

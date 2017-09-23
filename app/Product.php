@@ -11,9 +11,10 @@ class Product extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'price', 'brand', 'size', 'stock'
-    ];
+    protected $fillable = ['name', 'price', 'stock', 'brand_id'];
     
-    
+    public function brand()
+    {
+        return $this->belongsTo('App\Brand');
+    }
 }
