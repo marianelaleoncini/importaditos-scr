@@ -80,11 +80,16 @@ footer {
             border-top: 0;
             border-right: 0;
             border-left: 0;
+            border-bottom: 1px solid #ccc;
             padding-right: 0;
             padding-left: 0;
             border-radius: initial;
             &:focus {
                 outline: none !important;
+                background: transparent;
+            }     
+            &:hover {
+                background: transparent;
             }     
         }
         .dropdown-menu.open {

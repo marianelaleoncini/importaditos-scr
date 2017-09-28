@@ -3,32 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Size;
+use App\Product;
 use App\Brand;
 use Illuminate\Http\Request;
 
-class SizeController extends Controller
+class ProductController extends Controller
 {   
     /**
-     * Show the list of sizes
+     * Show the list of Products
      * @return Illuminate\View\View
      */
     public function index() {
-        $sizes = Size::all();
-        return view('sizes.index-sizes', compact('sizes'));
+        $products = Product::all();
+        return view('products.index-products', compact('products'));
     }
     
     /**
-    * Show the create size form.
+    * Show the create Product form.
     * @return Illuminate\View\View
     */
     public function create() {
         $brands = Brand::all();
-        return view('sizes.create-sizes', compact('brands')); 
+        return view('products.create-products', compact('brands')); 
     }
 
     /**
-     * Store a new Size
+     * Store a new Product
      * @param Illuminate\Http\Request  $request
      * @return Illuminate\Routing\Redirector
      */
@@ -38,14 +38,14 @@ class SizeController extends Controller
             'brand' => 'required'
         ]);
 
-        Size::create([
+        Product::create([
             'name' => $request->get('name'), 
             'brand_id' => $request->get('brand'),
-            'height' => $request->get('height'),
-            'weight'=> $request->get('weight')
+            'price' => $request->get('price'),
+            'stock'=> $request->get('stock')
         ]);
 
-        return redirect()->route('sizes');        
+        return redirect()->route('products');        
     }
         
 }

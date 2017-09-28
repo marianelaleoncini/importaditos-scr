@@ -44,9 +44,11 @@ class BrandController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255'
         ]);
+
         Brand::create(
             ['name' => $request->input('name')]
         );
+        
         return redirect()->route('brands');
     }
 }

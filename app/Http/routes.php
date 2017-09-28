@@ -50,6 +50,20 @@ Route::post('brands', [
     'uses' => 'BrandController@store'
 ]);
 
+//Product
+Route::get('products', [
+    'as' => 'products',
+    'uses' => 'ProductController@index'
+]);
+Route::get('products/create', [
+    'as' => 'products.create',
+    'uses' => 'ProductController@create'
+]);
+Route::post('products', [
+    'as' => 'products',
+    'uses' => 'ProductController@store'
+]);
+
 //Authentication
 Route::get('login', [
     'as' => 'auth.login',

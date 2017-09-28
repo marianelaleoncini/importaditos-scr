@@ -42,7 +42,7 @@
                             <ul class="dropdown-menu">
                               <li><a href="{{ route('brands') }}">Marcas</a></li>
                               <li><a href="{{ route('sizes') }}">Talles</a></li>
-                              <li><a href="#">Productos</a></li>
+                              <li><a href="{{ route('products') }}">Productos</a></li>
                               <li role="separator" class="divider"></li>
                               <li class="dropdown-header">Nav header</li>
                               <li><a href="#">Separated link</a></li>
