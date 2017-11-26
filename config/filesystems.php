@@ -53,6 +53,11 @@ return [
             'root' => storage_path('app/public'),
             'visibility' => 'public',
         ],
+        'custom-local' => [
+            'driver' => 'local',
+            'root' => 'images',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',
@@ -61,6 +66,7 @@ return [
             'region' => 'your-region',
             'bucket' => 'your-bucket',
         ],
+        
 
     ],
 

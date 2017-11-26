@@ -6,9 +6,9 @@
     <div class="col-sm-4 col-sm-offset-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <span>Administrar Marcas</span>
+                <span>Administrar Categorías</span>
                 <span> 
-                    <a href="{{ route('brands.create') }}">
+                    <a href="{{ route('categories.create') }}">
                         <span class="fa fa-plus" aria-hidden="true"></span>
                     </a>
                 </span>
@@ -22,12 +22,12 @@
                     </tr> 
                     </thead> 
                     <tbody>
-                    @foreach ($brands as $brand)
+                    @foreach ($categories as $category)
                         <tr>
-                            <td>{{$brand->name}}</td>
+                            <td>{{$category->name}}</td>
                             <td>
-                                <form action="{{ route('brands.delete', ['brand_id' => $brand->id]) }}" method="POST" class="table-actions">
-                                    <a href="{{ route('brands.edit', ['brand_id' => $brand->id]) }}">
+                                <form action="{{ route('categories.delete', ['category_id' => $category->id]) }}" method="POST" class="table-actions">
+                                    <a href="{{ route('categories.edit', ['category_id' => $category->id]) }}">
                                         <span class="fa fa-pencil-square-o edit" aria-hidden="true"></span>
                                     </a>
                                     {{ csrf_field() }}

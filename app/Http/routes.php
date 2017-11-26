@@ -35,6 +35,18 @@ Route::post('sizes', [
     'as' => 'sizes',
     'uses' => 'SizeController@store'
 ]);
+Route::get('sizes/edit/{size_id}', [
+    'as' => 'sizes.edit',
+    'uses' => 'SizeController@edit'
+]);
+Route::put('sizes/update/{size_id}', [
+    'as' => 'sizes.update',
+    'uses' => 'SizeController@update'
+]);
+Route::delete('/sizes/{size_id}', [
+    'as' => 'sizes.delete',
+    'uses' => 'SizeController@destroy'
+]);
 
 //Brand
 Route::get('brands', [
@@ -48,6 +60,18 @@ Route::get('brands/create', [
 Route::post('brands', [
     'as' => 'brands',
     'uses' => 'BrandController@store'
+]);
+Route::get('brands/edit/{brand_id}', [
+    'as' => 'brands.edit',
+    'uses' => 'BrandController@edit'
+]);
+Route::put('brands/update/{brand_id}', [
+    'as' => 'brands.update',
+    'uses' => 'BrandController@update'
+]);
+Route::delete('/brands/{brand_id}', [
+    'as' => 'brands.delete',
+    'uses' => 'BrandController@destroy'
 ]);
 
 //Product
@@ -63,6 +87,46 @@ Route::post('products', [
     'as' => 'products',
     'uses' => 'ProductController@store'
 ]);
+Route::get('products/edit/{product_id}', [
+    'as' => 'products.edit',
+    'uses' => 'ProductController@edit'
+]);
+Route::put('products/update/{product_id}', [
+    'as' => 'products.update',
+    'uses' => 'ProductController@update'
+]);
+Route::get('products/getSizes/brand/{brand_id}', 'ProductController@getSizes');
+Route::delete('/products/{product_id}', [
+    'as' => 'products.delete',
+    'uses' => 'ProductController@destroy'
+]);
+
+//Category
+Route::get('categories', [
+    'as' => 'categories',
+    'uses' => 'CategoryController@index'
+]);
+Route::get('categories/create', [
+    'as' => 'categories.create',
+    'uses' => 'CategoryController@create'
+]);
+Route::post('categories', [
+    'as' => 'categories',
+    'uses' => 'CategoryController@store'
+]);
+Route::get('categories/edit/{category_id}', [
+    'as' => 'categories.edit',
+    'uses' => 'CategoryController@edit'
+]);
+Route::put('categories/update/{category_id}', [
+    'as' => 'categories.update',
+    'uses' => 'CategoryController@update'
+]);
+Route::delete('/categories/{category_id}', [
+    'as' => 'categories.delete',
+    'uses' => 'CategoryController@destroy'
+]);
+
 
 //Authentication
 Route::get('login', [

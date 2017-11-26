@@ -32,12 +32,17 @@
                             <td>{{$size->height}}</td>
                             <td>{{$size->weight}}</td>
                             <td>
-                                <a href="">
-                                    <span class="fa fa-pencil-square-o edit" aria-hidden="true"></span>
-                                </a>
-                                <a href="">
-                                    <span class="fa fa-trash-o remove" aria-hidden="true"></span>
-                                </a>
+                                <form action="{{ route('sizes.delete', ['size_id' => $size->id]) }}" method="POST" class="table-actions">
+                                    <a href="{{ route('sizes.edit', ['size_id' => $size->id]) }}">
+                                        <span class="fa fa-pencil-square-o edit" aria-hidden="true"></span>
+                                    </a>
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+
+                                    <button type="submit" class="btn-link">
+                                        <span class="fa fa-trash-o remove" aria-hidden="true"></span>
+                                    </button>
+                                </form>
                             </td>
                         </tr> 
                     @endforeach

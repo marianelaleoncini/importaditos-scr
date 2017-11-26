@@ -13,19 +13,6 @@ class BrandController extends Controller
         $brands = Brand::all();
         return view('brands.index-brands', compact('brands'));
     }
-    
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-     protected function validator(array $data)
-     {
-         return Validator::make($data, [
-             'name' => 'required|max:255'
-         ]);
-     }
 
     /**
      * Show the create brand form.
@@ -50,5 +37,30 @@ class BrandController extends Controller
         );
         
         return redirect()->route('brands');
+    }
+
+    public function edit(Request $request, $brand_id) {
+        $brand = Brand::find($brand_id);
+        return view('brands.create-brands', compact('brand')); 
+    }
+
+    public function update(Request $request, $brand_id) {
+        $this->validate($request, [
+            'name' => 'required|max:255'
+        ]);
+
+        $brand = Brand::find($brand_id);
+            
+        $brand->name = $request->get('name');
+        
+        $brand->save();
+
+        return redirect()->route('brands'); 
+    }
+
+    public function destroy(Request $request, $brand_id) {
+        $brand = Brand::find($brand_id);        
+        $brand->delete();
+        return redirect()->route('brands'); 
     }
 }

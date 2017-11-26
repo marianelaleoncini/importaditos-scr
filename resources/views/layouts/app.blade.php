@@ -43,6 +43,7 @@
                               <li><a href="{{ route('brands') }}">Marcas</a></li>
                               <li><a href="{{ route('sizes') }}">Talles</a></li>
                               <li><a href="{{ route('products') }}">Productos</a></li>
+                              <li><a href="{{ route('categories') }}">Categorías</a></li>
                               <li role="separator" class="divider"></li>
                               <li class="dropdown-header">Nav header</li>
                               <li><a href="#">Separated link</a></li>
@@ -87,6 +88,13 @@
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
             crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+        <script src="/assets/js/ajax-methods.js"></script>
+{{--          <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>  --}}
         
+        @yield('script')
+
     </body>
 </html>

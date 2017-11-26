@@ -3,9 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Brand extends Model
 {
+    use SoftDeletes;
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -13,11 +23,6 @@ class Brand extends Model
      */
      protected $fillable = ['name'];
 
-    public function products()
-    {
-        return $this->hasMany('App\Product');
-    }
-    
     public function sizes()
     {
         return $this->hasMany('App\Size');

@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Model
+class Category extends Model
 {
     use SoftDeletes;
 
@@ -21,18 +21,11 @@ class Product extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'price', 'stock', 'size_id', 'image'];
-    
-    public function size()
-    {
-        return $this->belongsTo('App\Size');
-    }
+    protected $fillable = ['name'];
 
-    public function categories()
+    public function products()
     {
-        return $this->belongsToMany('App\Category')
+        return $this->belongsToMany('App\Product')
           ->withTimestamps();
-    }    
-    
-
+    }
 }
