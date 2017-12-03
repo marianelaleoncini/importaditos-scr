@@ -18,8 +18,7 @@ elixir(function(mix) {
         'resources/assets/js'
     ) */
     .sass([
-        'app.scss',
-        'home.scss'
+        'app.scss'
     ])
    /*  .scripts([
         'bootstrap-select.js'

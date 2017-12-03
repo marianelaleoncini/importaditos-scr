@@ -33,6 +33,19 @@
                                 </span>
                             @endif
                         </div>
+                        <div class="form-group">
+                            <label for="categories[]" class=" col-md-12">Categorías</label>
+                            <select name="categories[]" id="categories" class="selectpicker" title="Selecciona las Categorías" multiple>
+                                @foreach($categories as $category)
+                                    {{--  @if (old('category') == $category->id || (isset($product->size->category_id) && $product->size->category_id == $category->id))  --}}
+                                    @if (collect(old('categories'))->contains($category->id) || (isset($selectedCategories) && in_array($category->id, $selectedCategories)))
+                                        <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                    @else
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="form-group {{ $errors->has('brand') ? ' has-error' : '' }} required">
                             <label for="brand" class="col-md-12">Marca</label>
                             <select name="brand" id="brand" class="selectpicker" title="Selecciona una Marca">

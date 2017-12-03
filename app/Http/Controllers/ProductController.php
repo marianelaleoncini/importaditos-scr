@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Product;
 use App\Brand;
+use App\Size;
+use App\Category;
 use Illuminate\Http\Request;
 use Storage;
 
@@ -24,8 +26,9 @@ class ProductController extends Controller
     * @return Illuminate\View\View
     */
     public function create() {
-        $brands = Brand::all();
-        return view('products.create-products', compact('brands')); 
+        $brands = Brand::orderBy('name', 'asc')->get();
+        $categories = Category::orderBy('name', 'asc')->get();
+        return view('products.create-products', compact('brands', 'categories')); 
     }
 
     /**
@@ -43,21 +46,28 @@ class ProductController extends Controller
             'price' => 'required'
         ]);
 
-        Product::create([
+        $product = Product::create([
             'name' => $request->get('name'), 
             'size_id' => $request->get('size'),
             'price' => $request->get('price'),
             'stock'=> $request->get('stock'),
             'image' => $fileName
         ]);
+        
+        $categories = $request->get('categories');
+        $product->categories()->sync($categories);
 
         return redirect()->route('products');        
     }
 
     public function edit(Request $request, $product_id) {
-        $product = Product::find($product_id);
-        $brands = Brand::all();
-        return view('products.create-products', compact('product', 'brands')); 
+        $product = Product::find($product_id);  
+        if ($product->categories) {
+            $selectedCategories = $product->categories->pluck('id')->toArray();
+        }
+        $brands = Brand::orderBy('name', 'asc')->get();
+        $categories = Category::orderBy('name', 'asc')->get();
+        return view('products.create-products', compact('product', 'brands', 'categories', 'selectedCategories')); 
     }
 
     public function update(Request $request, $product_id) {
@@ -79,14 +89,19 @@ class ProductController extends Controller
         if ($fileName) {
             $product->image = $fileName;
         }
+        $categories = $request->get('categories');
+        /* The sync method accepts an array of IDs to place on the intermediate table.
+        Any IDs that are not in the given array will be removed from the intermediate table.  */
+        $product->categories()->sync($categories);
+
         $product->save();
 
         return redirect()->route('products'); 
     }
 
     public function getSizes(Request $request, $brand_id) {
-        $brand = Brand::find($brand_id);
-        return $brand->sizes;
+        $sizes = Size::where('brand_id', $brand_id)->orderBy('name', 'asc')->get();
+        return $sizes;
     }   
 
     public function saveFile($request) {

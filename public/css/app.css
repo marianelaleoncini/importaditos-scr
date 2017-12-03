@@ -1,3 +1,4 @@
+@charset "UTF-8";
 select.bs-select-hidden,
 select.selectpicker {
   display: none !important; }
@@ -412,7 +413,6 @@ a {
   .form-horizontal .form-group input.form-control {
     width: 100%; } }
 
-@charset "UTF-8";
 /* Imágenes */
 .featurette-image {
   width: 140px; }
@@ -432,5 +432,104 @@ a {
     padding: 8% 10% 10% 10%;
     text-shadow: 1px 1px 4px #000000;
     text-align: center; }
+
+/* Stock page */
+.container.categories {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  max-width: 1200px; }
+
+.container-all {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 20px; }
+  .container-all .description {
+    font-size: 90px; }
+
+.container-partial {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  max-width: 600px; }
+  .container-partial .description {
+    font-size: 45px; }
+
+.category {
+  -ms-box-shadow: 0px 0px 15px 2px #ccc;
+  box-shadow: 0px 0px 15px 2px #ccc;
+  display: inline-block;
+  transition: all .7s ease-in-out;
+  -webkit-transition: all .7s ease-in-out;
+  position: relative;
+  text-align: center; }
+  .category.all {
+    max-width: 500px;
+    margin-right: 20px; }
+    .category.all .photo {
+      width: 500px; }
+  .category.partial {
+    max-width: 240px;
+    padding: 0;
+    margin: 0 20px 20px 20px; }
+    .category.partial .photo {
+      width: 240px; }
+  .category .photo {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-radius: 0; }
+  .category .description {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .7s;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0; }
+    .category .description p {
+      text-transform: uppercase; }
+  .category .background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .7s; }
+
+.category:hover {
+  transform: scale(1.1); }
+
+.category:hover .description {
+  visibility: visible;
+  opacity: 1; }
+
+.category:hover .background {
+  background-color: black;
+  opacity: 0.5;
+  display: inline-block;
+  visibility: visible; }
 
 /*# sourceMappingURL=app.css.map */

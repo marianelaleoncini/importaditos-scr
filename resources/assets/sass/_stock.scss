@@ -1,0 +1,103 @@
+/* Stock page */
+.container.categories {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: flex-start;
+    max-width: 1200px;
+}
+.container-all {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    .description {
+        font-size: 90px;
+    }
+}
+.container-partial {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-width: 600px;
+    .description {
+        font-size: 45px;
+    }
+}
+.category {
+    @include box-shadow($default-shadow-color);    
+    display: inline-block;
+    transition: all .7s ease-in-out;
+    -webkit-transition: all .7s ease-in-out;
+    position: relative;
+    text-align:  center;
+
+    &.all {
+        max-width: 500px;
+        margin-right: 20px;
+        .photo {
+            width: 500px;
+        }
+    }
+
+    &.partial {
+        max-width: 240px;
+        padding: 0;
+        .photo {
+            width: 240px;
+        }
+        margin: 0 20px 20px 20px;
+    }
+    
+    .photo {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        border-radius: 0;
+    }
+ 
+    .description {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all .7s;
+        transition: all .7s;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        p {
+            text-transform: uppercase;
+        }
+    }
+     .background {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all .7s;
+        transition: all .7s;
+    } 
+}
+.category:hover {
+   transform: scale(1.1);
+}
+.category:hover .description {
+    visibility: visible;
+    opacity: 1;
+}
+.category:hover .background {
+    background-color: black;
+    opacity: 0.5;
+    display: inline-block;
+    visibility: visible;
+}
